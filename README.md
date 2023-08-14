@@ -118,10 +118,11 @@ WHERE EXISTS ({{SELECT UPPER({code}) FROM {Product}}})
 ```
 
 ### More Examples
-You can check the [Unit Tests](https://github.com/listemanuel95/kotlinflexiblesearch/tree/main/kotlinflexiblesearch/kotlinsrc/com/github/listemanuel95/tests) for exhaustive examples.
+You can check the [Unit Tests](https://github.com/listemanuel95/kotlinflexiblesearch/tree/main/kotlinflexiblesearch/kotlinsrc/com/github/listemanuel95/flexiblesearch/tests) for exhaustive examples.
 
-### Tips & Tricks
-#### String Templates
+## Tips & Tricks
+
+### String Templates
 Since we're using String Templates. Everything evaluates to a String in the end. That means doing this:
 ``` kotlin
 val subquery = subquery("${selectFieldsFrom(product::class, field(upper(product.CODE)))}")  
@@ -148,7 +149,7 @@ val query = buildQuery {
 }
 ```
 
-#### Readability
+### Readability
 I recommend using `typealias`, **named parameters** and **variable extraction** everywhere possible to enhance the readability of the queries. Compare these two snippets as an example:
 
 Without:
