@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extensioninfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="extensioninfo.xsd">
+    <extension abstractclassprefix="Generated" classprefix="Kotlinflexiblesearch" jaloLogicFree="true"
+               managername="KotlinflexiblesearchManager" managersuperclass="de.hybris.platform.jalo.extension.Extension"
+               name="kotlinflexiblesearch" usemaven="false">
+        <coremodule generated="true" manager="com.github.listemanuel95.flexiblesearch.jalo.KotlinflexiblesearchManager"
+                    packageroot="com.github.listemanuel95.flexiblesearch"/>
+    </extension>
+</extensioninfo>

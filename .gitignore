@@ -1,0 +1,90 @@
+# Solr configurations
+#hybris/config/solr/embedded/solr.xml
+#hybris/config/solr/instances/
+
+
+classes/
+gensrc/
+eclipsebin/
+#dist/
+temp/
+
+# OS GENERATED FILES #
+.DS_Store
+ehthumbs.db
+Icon
+Thumbs.db
+__MACOSX/
+._.DS_Store
+.DS_Store
+
+# INTELLIJ GENERATED FILES #
+.idea/
+*.iml
+*.eml
+
+#VS_CODE
+.vscode/
+
+# ECLIPSE GENERATED FILES #
+RemoteSystemsTempFiles/
+.metadata
+.recommenders
+
+# MERGED FILES #
+*.BASE
+*.LOCAL
+*.REMOTE
+*.orig
+
+# HYBRIS GENERATED FILES #
+pom.xml
+hmc.xsd
+build.xml
+beans.xsd
+items.xsd
+extensioninfo.xsd
+platformhome.properties
+*hmc.jar
+*-testclasses.xml
+*-webtestclasses.xml
+
+# PMD
+.arvatopmd
+ruleset.xml
+.pmd
+
+# LOGS AND DATABASES #
+*.log
+*.sql
+*.sqlite
+readme.txt
+.recommenders/
+
+# JAVA GENERATED FILES #
+*.class
+*.number
+
+# Source Maps #
+style.css.map
+
+.sass-cache
+
+*.settings
+*.lastupdate
+hybris/bin/custom/molinos/genericaudit/**/*.css
+*.springBeans
+*dummy.txt
+
+
+# Classpaths #
+*.classpath
+*.classpath*
+
+# Projects #
+*.project
+
+# Sonar Scan
+.scannerwork/
+
+
