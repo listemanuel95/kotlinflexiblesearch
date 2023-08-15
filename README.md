@@ -55,13 +55,13 @@ typealias Order = OrderModel
 fun multipleJoins(): List<ProductModel> {
   val (p, oe, o) = aliases("p", "oe", "o")
   val query = buildQuery {
-  """
-  ${selectFieldsFrom(Product::class `as` p, 
-      listOf(field(count(o[Order.CODE])), field(p[Product.CODE])),
-      join(Entry::class `as` oe on (p.pk() to oe[Entry.PRODUCT])),
-      join(Order::class `as` o on (o.pk() to oe[Entry.ORDER]))
-  )} ${groupBy(p[Product.CODE])} ${orderByDesc(count(o[Order.CODE]))}
-  """
+    """
+    ${selectFieldsFrom(Product::class `as` p, 
+        listOf(field(count(o[Order.CODE])), field(p[Product.CODE])),
+        join(Entry::class `as` oe on (p.pk() to oe[Entry.PRODUCT])),
+        join(Order::class `as` o on (o.pk() to oe[Entry.ORDER]))
+    )} ${groupBy(p[Product.CODE])} ${orderByDesc(count(o[Order.CODE]))}
+    """
   }
 
   // assumes you've injected a FlexibleSearchService bean into the `flexibleSearchService` variable
@@ -89,7 +89,7 @@ fun notInSubquery() {
   val query = buildQuery {
     """
     ${selectFrom(Product::class)} 
-    ${where(attr(Product.CODE) notInSubquery subquery)}
+    ${where(attr(Product.CODE) notInSubquery commonSubquery)}
     """
   }
 }
@@ -97,9 +97,9 @@ fun notInSubquery() {
 fun existsSubquery() {
   val p = alias("p")
   val query = buildQuery{ 
-  """
+    """
     ${selectFrom(Product::class `as` p)} ${whereExists(commonSubquery)}
-  """
+    """
   }
 }
 
@@ -166,7 +166,7 @@ val query = buildQuery {
   ${where(p[PointOfServiceModel.MODIFIEDTIME] gte "2020-10-01")}  
   ${or(a[AddressModel.MODIFIEDTIME] gte "2020-10-01")}  
   ${order(byDesc(p[PointOfServiceModel.BASESTORE]), byAsc(p[PointOfServiceModel.CREATIONTIME]))}  
-"""  
+  """  
 }
 ```
 
@@ -189,6 +189,6 @@ val query = buildQuery {
   ${where(p[PoS.MODIFIEDTIME] gte "2020-10-01")}  
   ${or(a[Address.MODIFIEDTIME] gte "2020-10-01")}  
   ${order(byDesc(p[PoS.BASESTORE]), byAsc(p[PoS.CREATIONTIME]))}  
-"""  
+  """  
 }
 ```
